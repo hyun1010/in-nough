@@ -1,20 +1,10 @@
 import type { Metadata } from 'next';
-import { DM_Sans, Noto_Sans_KR } from 'next/font/google';
+import { dm_sans, noto_sans } from './fonts';
 import './globals.css';
 
-const dm_sans = DM_Sans({
-  subsets: ['latin'],
-  weight: ['400'],
-  variable: '--dm-sans',
-});
-const noto_sans = Noto_Sans_KR({
-  subsets: ['latin'],
-  variable: '--noto-sans',
-});
-
 export const metadata: Metadata = {
-  title: 'example',
-  description: 'example',
+  title: '이너-프',
+  description: '이너-프',
 };
 
 export default function RootLayout({
