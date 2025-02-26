@@ -3,7 +3,6 @@ import { twAllMerge } from '@/shared/utils';
 
 export interface ButtonProps {
   variant?: VariantType;
-  active?: boolean;
   disabled?: boolean;
   label?: string;
   prefixIcon?: () => React.ReactElement;
@@ -18,7 +17,6 @@ export default function Button({
   prefixIcon,
   suffixIcon,
   disabled = false,
-  active = false,
   className,
 }: ButtonProps) {
   const isOnlyIcon = label === undefined && (prefixIcon || !suffixIcon);
