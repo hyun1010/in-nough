@@ -1,17 +1,21 @@
 import type { Config } from 'tailwindcss';
 
 export default {
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
       colors: {
         white: '#fff',
         primary: '#5051F9',
+        'primary-hover': '#3b47c8',
+        'primary-active': '#4040c0',
+        'primary-disabled': '#b3b8f7',
         secondary: '#1EA7FF',
+        'secondary-hover': '#1796d3',
+        'secondary-active': '#147bb2',
+        'secondary-disabled': '#a3d8ff',
+        bg_disabled: '#f6f6f6',
+        text_disabled: '#888888',
         point: {
           green: '#34D870',
           orange: '#FF694A',
@@ -21,6 +25,19 @@ export default {
           1: '#1C1243',
           2: '#A29EB6',
           3: '#EFF1F3',
+        },
+        gray: {
+          50: '#f6f6f6',
+          100: '#e7e7e7',
+          200: '#d1d1d1',
+          300: '#b0b0b0',
+          400: '#888888',
+          500: '#6d6d6d',
+          600: '#5d5d5d',
+          700: '#505050',
+          800: '#454545',
+          900: '#3d3d3d',
+          950: '#262626',
         },
       },
       fontFamily: {
