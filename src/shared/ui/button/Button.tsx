@@ -1,8 +1,10 @@
 import { VariantType } from '@/shared/model';
+import { ShapeType } from '@/shared/model/types';
 import { twAllMerge } from '@/shared/utils';
 
 export interface ButtonProps {
   variant?: VariantType;
+  shape?: ShapeType;
   disabled?: boolean;
   label?: string;
   prefixIcon?: () => React.ReactElement;
@@ -12,6 +14,7 @@ export interface ButtonProps {
 }
 export default function InternalButton({
   variant = 'primary',
+  shape = 'default',
   label,
   onClick,
   prefixIcon,
@@ -43,6 +46,13 @@ export default function InternalButton({
     disabled:text-text_disabled
   `;
 
+  const ghostButtonClasses = `
+    bg-white border border-white text-gray-900 
+    hover:bg-gray-100 
+    active:bg-gray-200 
+    disabled:bg-gray-100 disabled:text-gray-400
+  `;
+
   return (
     <button
       className={twAllMerge(
@@ -50,6 +60,8 @@ export default function InternalButton({
         variant === 'primary' && primaryButtonClasses,
         variant === 'secondary' && secondaryButtonClasses,
         variant === 'plain' && plainButtonClasses,
+        variant === 'ghost' && ghostButtonClasses,
+        shape === 'rounded' && 'rounded-full',
         isOnlyIcon && 'px-2.5 py-2.5 w-fit h-fit',
         disabled && 'opacity-70 cursor-not-allowed',
         className
