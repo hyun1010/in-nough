@@ -12,7 +12,7 @@ export interface InputProps {
   onSubmit?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   className?: string;
 }
-const Input = forwardRef<HTMLInputElement, InputProps>(
+const InternalInput = forwardRef<HTMLInputElement, InputProps>(
   (props, ref: ForwardedRef<HTMLInputElement>) => {
     const {
       value: initValue,
@@ -75,5 +75,5 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
   }
 );
 
-Input.displayName = 'Input';
-export default Input;
+InternalInput.displayName = 'Input';
+export default InternalInput;

@@ -10,7 +10,7 @@ export interface ButtonProps {
   onClick?: () => void;
   className?: string;
 }
-export default function Button({
+export default function InternalButton({
   variant = 'primary',
   label,
   onClick,
