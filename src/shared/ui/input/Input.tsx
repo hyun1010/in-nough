@@ -1,3 +1,4 @@
+'use client';
 import { twAllMerge } from '@/shared/utils';
 import { ForwardedRef, forwardRef, useEffect, useState } from 'react';
 
