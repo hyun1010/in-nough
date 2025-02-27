@@ -16,7 +16,8 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Icons = () => (
-  <div className="flex flex-col gap-2">
-    <Icon.Plus className="stroke-primary" />
+  <div className="flex flex-wrap gap-2 ">
+    <Icon.Plus />
+    <Icon.Search />
   </div>
 );

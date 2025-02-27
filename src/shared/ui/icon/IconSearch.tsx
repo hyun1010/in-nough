@@ -1,7 +1,7 @@
 import { IconProps } from '@/shared/model/types';
 import { twAllMerge } from '@/shared/utils';
 
-export function IconPlus({ className }: IconProps) {
+export function IconSearch({ className }: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,8 +11,8 @@ export function IconPlus({ className }: IconProps) {
       fill="none"
       className={twAllMerge('stroke-gray-400 w-8 h-8', className)}
     >
-      <path d="M12 6L12 18" stroke-linecap="round" />
-      <path d="M18 12L6 12" stroke-linecap="round" />
+      <circle cx="11" cy="11" r="7" />
+      <path d="M20 20L17 17" strokeLinecap="round" />
     </svg>
   );
 }
