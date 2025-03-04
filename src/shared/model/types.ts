@@ -1,7 +1,5 @@
-const variantTypes = ['primary', 'secondary', 'plain', 'ghost'] as const;
-const shapeTypes = ['default', 'rounded'] as const;
-export type VariantType = (typeof variantTypes)[number];
-export type ShapeType = (typeof shapeTypes)[number];
+export type VariantType = 'primary' | 'secondary' | 'plain' | 'ghost';
+export type ShapeType = 'default' | 'rounded';
 export type IconProps = {
   className?: string;
 };
