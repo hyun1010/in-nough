@@ -52,6 +52,11 @@ export default {
           900: '#3d3d3d',
           950: '#262626',
         },
+        social: {
+          kakao: '#fddc3f',
+          kakao_text: '#3a2929',
+          naver: '#00c737',
+        },
       },
       fontFamily: {
         'dm-sans': [

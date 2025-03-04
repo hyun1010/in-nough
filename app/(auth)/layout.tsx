@@ -6,16 +6,18 @@ export default function AuthLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex h-screen">
-      <div className="w-1/2 bg-gradient-to-b from-secondary to-primary flex flex-col justify-center items-center text-white p-10">
-        <h1 className="text-3xl font-bold">이너-프</h1>
-        <p className="mt-1 mb-6 text-center">
-          The most popular peer to peer lending at SEA
-        </p>
-        <Button variant="ghost" label="Read More" shape="rounded" />
+    <div className="flex h-screen min-h-[430px]">
+      <div className="hidden sm:flex sm:w-1/2 md:w-2/3 bg-gradient-to-l from-purple-500 to-primary flex-col justify-center items-center text-white p-10">
+        <h1 className="text-title">이너-프</h1>
+        <p className="mt-1 mb-6 text-center">가장 완벽한 일정 관리 프로세스</p>
+        <Button
+          variant="ghost"
+          label="Read More"
+          shape="rounded"
+          className="w-44 h-12"
+        />
       </div>
-
-      <div className="w-1/2 flex flex-col justify-center items-center bg-white p-10">
+      <div className="grow flex flex-col justify-center items-center bg-white p-10">
         {children}
       </div>
     </div>
