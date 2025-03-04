@@ -5,7 +5,14 @@ module.exports = {
     es6: true,
     node: true,
   },
-  extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:prettier/recommended', 'plugin:@typescript-eslint/recommended', 'prettier', 'plugin:storybook/recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:prettier/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
+    'plugin:storybook/recommended',
+  ],
   settings: {
     react: {
       version: 'detect',
@@ -42,6 +49,7 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
+    'import/no-cycle': 'error',
   },
   overrides: [
     {
