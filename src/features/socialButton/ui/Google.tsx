@@ -1,4 +1,5 @@
 'use client';
+import { signIn } from 'next-auth/react';
 import BaseButton from './BaseButton';
 
 const InternalGoogle = ({
@@ -7,7 +8,7 @@ const InternalGoogle = ({
   text?: string;
 }) => {
   const handleClick = () => {
-    console.log('click');
+    signIn('google');
   };
 
   return <BaseButton src={'/google.svg'} text={text} onClick={handleClick} />;
