@@ -11,8 +11,8 @@ export function IconPlus({ className }: IconProps) {
       fill="none"
       className={twAllMerge('stroke-gray-400 w-8 h-8', className)}
     >
-      <path d="M12 6L12 18" stroke-linecap="round" />
-      <path d="M18 12L6 12" stroke-linecap="round" />
+      <path d="M12 6L12 18" strokeLinecap="round" />
+      <path d="M18 12L6 12" strokeLinecap="round" />
     </svg>
   );
 }

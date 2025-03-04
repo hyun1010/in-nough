@@ -4,12 +4,13 @@ import { ForwardedRef, forwardRef, useEffect, useState } from 'react';
 
 export interface InputProps {
   label?: string;
+  type?: React.HTMLInputTypeAttribute;
   value?: string;
   disabled?: boolean;
   placeholder?: string;
   maxLength?: number;
-  prefixIcon?: () => React.ReactElement;
-  suffixIcon?: () => React.ReactElement;
+  prefixIcon?: React.ReactNode;
+  suffixIcon?: React.ReactNode;
   onChange?: (value: string) => void;
   onSubmit?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   className?: string;
@@ -19,6 +20,7 @@ const InternalInput = forwardRef<HTMLInputElement, InputProps>(
   (props, ref: ForwardedRef<HTMLInputElement>) => {
     const {
       label,
+      type = 'text',
       value: initValue,
       disabled,
       placeholder = '',
@@ -63,12 +65,13 @@ const InternalInput = forwardRef<HTMLInputElement, InputProps>(
 
         {prefixIcon && (
           <div className="absolute left-4 top-1/2 -translate-y-1/2 mr-2">
-            {prefixIcon()}
+            {prefixIcon}
           </div>
         )}
 
         <input
           ref={ref}
+          type={type}
           value={value}
           maxLength={maxLength}
           placeholder={isFocused || value ? '' : placeholder} // 포커스되면 placeholder 숨김
@@ -86,10 +89,9 @@ const InternalInput = forwardRef<HTMLInputElement, InputProps>(
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
         />
-
         {suffixIcon && (
           <div className="absolute right-4 top-1/2 -translate-y-1/2 mr-2">
-            {suffixIcon()}
+            {suffixIcon}
           </div>
         )}
       </div>

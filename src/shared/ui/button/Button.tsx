@@ -7,8 +7,8 @@ export interface ButtonProps {
   shape?: ShapeType;
   disabled?: boolean;
   label?: string;
-  prefixIcon?: () => React.ReactElement;
-  suffixIcon?: () => React.ReactElement;
+  prefixIcon?: React.ReactNode;
+  suffixIcon?: React.ReactNode;
   onClick?: () => void;
   className?: string;
 }
@@ -69,9 +69,9 @@ export default function InternalButton({
       onClick={onClick}
       disabled={disabled}
     >
-      {prefixIcon && prefixIcon()}
+      {prefixIcon && prefixIcon}
       {label && label}
-      {suffixIcon && suffixIcon()}
+      {suffixIcon && suffixIcon}
     </button>
   );
 }

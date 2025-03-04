@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta } from '@storybook/react';
 import { Icon } from '..';
 
 const meta = {
@@ -13,7 +13,6 @@ const meta = {
 } satisfies Meta<typeof Icon.Plus>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
 export const Icons = () => (
   <div className="flex flex-wrap gap-2 ">
