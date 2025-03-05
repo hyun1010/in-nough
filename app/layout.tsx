@@ -1,5 +1,5 @@
-import { AuthProvider } from '@/app/authProvider';
 import type { Metadata } from 'next';
+import { AuthProvider } from './authProvider';
 import { dm_sans, noto_sans } from './fonts';
 import './globals.css';
 
