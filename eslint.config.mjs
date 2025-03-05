@@ -23,6 +23,7 @@ const eslintConfig = [
       'no-unused-vars': 'off',
       'no-console': 'off',
       '@typescript-eslint/no-require-imports': 'off',
+      '@typescript-eslint/explicit-module-boundary-types': 'off', // 반환 타입 명시 안 해도 됨
       '@typescript-eslint/no-unused-vars': [
         'error',
         {
