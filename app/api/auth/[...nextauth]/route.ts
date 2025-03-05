@@ -2,7 +2,6 @@ import NextAuth from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 
 const authOptions = {
-  // Configure one or more authentication providers
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
@@ -10,7 +9,31 @@ const authOptions = {
     }),
   ],
   session: {
+    strategy: 'jwt' as const,
     maxAge: 60 * 60 * 24,
+  },
+
+  callbacks: {
+    async signIn() {
+      return true;
+    },
+    async jwt({ token, account, user }) {
+      if (account) {
+        token.accessToken = account.access_token;
+        token.refreshToken = account.refresh_token;
+      }
+      if (user) {
+        token.id = user.id;
+        token.active = user.active;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      session.user.id = token.id;
+      session.user.active = token.active;
+      session.accessToken = token.accessToken;
+      return session;
+    },
   },
 };
 
