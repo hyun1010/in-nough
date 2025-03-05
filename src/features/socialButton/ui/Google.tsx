@@ -11,7 +11,7 @@ const InternalGoogle = ({
     signIn('google');
   };
 
-  return <BaseButton src={'/google.svg'} text={text} onClick={handleClick} />;
+  return <BaseButton src={'/google.png'} text={text} onClick={handleClick} />;
 };
 InternalGoogle.displayName = 'GoogleButton';
 export default InternalGoogle;

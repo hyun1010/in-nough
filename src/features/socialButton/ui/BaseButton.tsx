@@ -1,5 +1,6 @@
 'use client';
 import { twAllMerge } from '@/shared/utils';
+import Image from 'next/image';
 
 const BaseButton = ({
   text,
@@ -7,7 +8,7 @@ const BaseButton = ({
   onClick,
   className,
 }: {
-  text?: string;
+  text: string;
   src: string;
   onClick: () => void;
   className?: string;
@@ -16,11 +17,11 @@ const BaseButton = ({
     <button
       onClick={onClick}
       className={twAllMerge(
-        'w-full flex items-center justify-center border rounded-lg py-2 font-medium',
+        'w-full flex items-center justify-center gap-1 border border-gray-300 rounded-lg py-2 font-medium font-noto-sans',
         className
       )}
     >
-      <img src={src} alt={text} className="w-5 h-5 mr-2" />
+      <Image src={src} alt={text} width={15} height={15} />
       {text}
     </button>
   );

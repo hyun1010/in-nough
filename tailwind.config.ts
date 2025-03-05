@@ -55,7 +55,7 @@ export default {
         social: {
           kakao: '#fddc3f',
           kakao_text: '#3a2929',
-          naver: '#00c737',
+          naver: '#00c300',
         },
       },
       fontFamily: {
