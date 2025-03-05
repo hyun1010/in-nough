@@ -1,4 +1,5 @@
 'use client';
+import { signIn } from 'next-auth/react';
 import BaseButton from './BaseButton';
 
 const InternalNaver = ({
@@ -7,7 +8,7 @@ const InternalNaver = ({
   text?: string;
 }) => {
   const handleClick = () => {
-    console.log('click');
+    signIn('naver');
   };
 
   return (

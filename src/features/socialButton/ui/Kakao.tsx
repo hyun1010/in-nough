@@ -1,4 +1,5 @@
 'use client';
+import { signIn } from 'next-auth/react';
 import BaseButton from './BaseButton';
 
 const InternalKaKao = ({
@@ -7,7 +8,7 @@ const InternalKaKao = ({
   text?: string;
 }) => {
   const handleClick = () => {
-    console.log('click');
+    signIn('kakao');
   };
 
   return (
