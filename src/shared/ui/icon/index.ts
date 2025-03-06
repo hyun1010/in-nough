@@ -7,3 +7,7 @@ export const Plus = React.lazy(() =>
 export const Search = React.lazy(() =>
   import('./IconSearch').then((module) => ({ default: module.IconSearch }))
 );
+
+export const Alarm = React.lazy(() =>
+  import('./IconAlarm').then((module) => ({ default: module.IconAlarm }))
+);

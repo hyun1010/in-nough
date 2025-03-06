@@ -49,7 +49,7 @@ const InternalInput = forwardRef<HTMLInputElement, InputProps>(
     }, [initValue]);
 
     return (
-      <div className="relative w-full h-fit">
+      <div className="relative h-fit group">
         {label && (
           <label
             className={twAllMerge(
@@ -77,7 +77,7 @@ const InternalInput = forwardRef<HTMLInputElement, InputProps>(
           placeholder={isFocused || value ? '' : placeholder} // 포커스되면 placeholder 숨김
           disabled={disabled}
           className={twAllMerge(
-            `bg-neutral-3 rounded-lg outline-none
+            `peer bg-neutral-3 rounded-lg outline-none
               h-12 w-80 px-6 py-3 text-headline_2 border
             border-gray-150 text-neutral-1 focus:border-primary`,
             prefixIcon && 'pl-14',
