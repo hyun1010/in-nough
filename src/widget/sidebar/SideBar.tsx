@@ -1,18 +1,13 @@
 'use client';
+import { Button } from '@/shared/ui';
 import { twAllMerge } from '@/shared/utils';
-import {
-  IconChevronLeft,
-  IconChevronRight,
-  IconClipboardList,
-  IconHome,
-} from '@tabler/icons-react';
+import { IconChevronRight, IconHome } from '@tabler/icons-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-const menuItems = [
-  { name: 'Dashboard', href: '/main', icon: IconHome },
-  { name: 'Transactions', href: '/transactions', icon: IconClipboardList },
-];
+
+const menuItems = [{ name: 'Dashboard', href: '/main', icon: IconHome }];
+
 export default function Sidebar() {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const pathname = usePathname();
@@ -23,31 +18,31 @@ export default function Sidebar() {
         isCollapsed ? 'w-20' : 'w-60'
       }`}
     >
-      <div className="h-20 flex items-center justify-between p-5 border-b border-gray-100">
-        <div className={`overflow-hidden transition-all`}>
+      <div className="h-20 flex items-center justify-center px-5 py-5 border-b border-gray-100">
+        <div className="overflow-hidden transition-all duration-300 ease-in-out">
           <h1
             className={twAllMerge(
               !isCollapsed &&
-                'overflow-hidden opacity-100 duration-300 ease-in-out text-2xl font-bold text-neutral-1 leading-none',
-              isCollapsed && 'opacity-0 duration-100 ease-in-out'
+                'opacity-100 text-2xl font-bold text-neutral-1 w-48',
+              isCollapsed && 'opacity-0'
             )}
           >
             이너프
           </h1>
         </div>
-        <button
+        <Button
+          variant="ghost"
           onClick={() => setIsCollapsed(!isCollapsed)}
-          className="p-2 rounded-md hover:bg-gray-100 transition"
-        >
-          {isCollapsed ? (
-            <IconChevronRight size={20} />
-          ) : (
-            <IconChevronLeft size={20} />
-          )}
-        </button>
+          prefixIcon={
+            <IconChevronRight
+              size={25}
+              className={isCollapsed ? 'rotate-0' : 'rotate-180'}
+            />
+          }
+        />
       </div>
 
-      <nav className="flex flex-col space-y-2 p-5">
+      <nav className="flex flex-col space-y-2 items-center py-5 font-noto-sans">
         {menuItems.map(({ name, href, icon: Icon }) => {
           const isActive = pathname === href;
           return (
@@ -55,20 +50,21 @@ export default function Sidebar() {
               key={href}
               href={href}
               className={twAllMerge(
-                `flex items-center px-3 py-2 rounded-lg transition h-9 ${
-                  isActive ? 'text-primary font-semibold' : 'text-gray-400'
-                }`
+                'flex items-center p-3 rounded-lg transition h-11 w-fit',
+                isActive
+                  ? 'text-primary bg-primary/10 font-semibold'
+                  : 'text-gray-600 hover:bg-primary/10 hover:text-gray-800'
               )}
             >
               <div className="flex-shrink-0">
                 <Icon
-                  size={20}
-                  className={isActive ? 'text-primary' : 'text-gray-400'}
+                  size={25}
+                  className={isActive ? 'text-primary' : 'text-gray-500'}
                 />
               </div>
               <span
-                className={`ml-3 overflow-hidden transition-all duration-300 ease-in-out leading-none ${
-                  isCollapsed ? 'w-0 opacity-0' : 'w-32 opacity-100'
+                className={`overflow-hidden transition-all duration-300 ease-in-out leading-none ${
+                  isCollapsed ? 'w-0 opacity-0' : 'w-32 opacity-100 ml-3'
                 }`}
               >
                 {name}
