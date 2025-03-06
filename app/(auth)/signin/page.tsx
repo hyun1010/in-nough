@@ -12,7 +12,7 @@ export default function LoginPage() {
           className="bg-white w-96"
           placeholder="비밀번호"
         />
-        <Button disabled label="로그인" className="w-96" />
+        <Button label="로그인" className="w-96" />
       </div>
       <DividerWithText text="또는" />
       <div className="w-full max-w-sm space-y-3">

@@ -5,11 +5,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        white: '#fff',
-        primary: '#4F46E5',
-        'primary-hover': '#3b47c8',
-        'primary-active': '#4040c0',
-        'primary-disabled': '#b3b8f7',
+        white: '#FFFFFF',
+        primary: '#6200EE', // 강렬한 보라색
+        'primary-hover': '#5600D4', // 조금 더 어두운 보라색
+        'primary-active': '#4B00B8', // 더 어두운 보라색
+        'primary-disabled': '#D1B5FF', // 부드럽고 연한 보라색
         purple: {
           50: '#faf5ff',
           100: '#f4e8ff',
@@ -23,34 +23,34 @@ export default {
           900: '#551c87',
           950: '#390764',
         },
-        secondary: '#1EA7FF',
-        'secondary-hover': '#1796d3',
-        'secondary-active': '#147bb2',
-        'secondary-disabled': '#a3d8ff',
-        bg_disabled: '#f6f6f6',
-        text_disabled: '#888888',
+        secondary: '#1EA7FF', // 하늘색 계열은 그대로
+        'secondary-hover': '#17A1D3',
+        'secondary-active': '#138CB2',
+        'secondary-disabled': '#A2D8FF',
+        bg_disabled: '#F0F0F0', // 배경 비활성화 색상 조정
+        text_disabled: '#A0A0A0', // 텍스트 비활성화 색상도 좀 더 부드럽게
         point: {
-          green: '#34D870',
-          orange: '#FF694A',
-          yellow: '#F7B000',
+          green: '#34D870', // 그린 계열은 그대로
+          orange: '#FF7043', // 더 자연스러운 오렌지
+          yellow: '#FFB74D', // 좀 더 따뜻한 노랑
         },
         neutral: {
-          1: '#1C1243',
-          2: '#A29EB6',
-          3: '#EFF1F3',
+          1: '#1C1243', // 어두운 중립색
+          2: '#A29EB6', // 기존의 부드러운 회색 계열
+          3: '#EFF1F3', // 기존의 밝은 회색 계열
         },
         gray: {
-          50: '#f6f6f6',
-          100: '#e7e7e7',
-          200: '#d1d1d1',
-          300: '#b0b0b0',
+          50: '#F7F7F7',
+          100: '#E1E1E1',
+          200: '#C4C4C4',
+          300: '#A6A6A6',
           400: '#888888',
-          500: '#6d6d6d',
-          600: '#5d5d5d',
-          700: '#505050',
-          800: '#454545',
-          900: '#3d3d3d',
-          950: '#262626',
+          500: '#707070', // 기본 회색을 좀 더 어두운 톤으로
+          600: '#585858',
+          700: '#404040',
+          800: '#303030',
+          900: '#202020', // 진한 회색 계열
+          950: '#121212',
         },
         social: {
           kakao: '#fddc3f',
@@ -69,7 +69,7 @@ export default {
         'noto-sans': ['var(--noto-sans)', 'dotum', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        title: ['1.5rem', { lineHeight: '1.8rem', fontWeight: '700' }],
+        title: ['1.5rem', { lineHeight: '2rem', fontWeight: '700' }],
         headline_1: ['1.125rem', { lineHeight: '1.75rem', fontWeight: '700' }],
         headline_2: ['1rem', { lineHeight: '1.5rem' }],
         body_bold: ['0.875rem', { lineHeight: '1.25rem', fontWeight: '700' }],
