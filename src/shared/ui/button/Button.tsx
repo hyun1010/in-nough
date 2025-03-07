@@ -25,32 +25,32 @@ export default function InternalButton({
   const isOnlyIcon = label === undefined && (prefixIcon || !suffixIcon);
 
   const primaryButtonClasses = `
-    bg-primary 
-    hover:bg-primary-hover 
-    active:bg-primary-active 
-    disabled:bg-primary-disabled
+    bg-primary-600 
+    hover:bg-primary-700 
+    active:bg-primary-800 
+    disabled:bg-primary-800/30
   `;
 
   const secondaryButtonClasses = `
-    bg-secondary 
-    hover:bg-secondary-hover 
-    active:bg-secondary-active 
-    disabled:bg-secondary-disabled
+    bg-secondary-500 
+    hover:bg-secondary-600 
+    active:bg-secondary-700 
+    disabled:bg-secondary-600/50
   `;
 
   const plainButtonClasses = `
-    border border-gray-150 text-gray-900 
-    hover:bg-gray-100 
-    active:bg-gray-200
-    disabled:bg-bg_disabled
-    disabled:text-text_disabled
+    border border-gray-300 text-gray-900 
+    hover:bg-gray-200 
+    active:bg-gray-300
+    disabled:bg-white
+    disabled:text-gray-500
   `;
 
   const ghostButtonClasses = `
     bg-white border border-white text-gray-900 
     hover:bg-gray-100 
     active:bg-gray-200 
-    disabled:bg-gray-100 disabled:text-gray-400
+    disabled:bg-gray-100 disabled:text-gray-500
   `;
 
   return (

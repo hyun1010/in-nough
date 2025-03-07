@@ -13,7 +13,7 @@ export default function WorkSpaceLayout({
         <SideBar />
         <div className="flex-1 flex flex-col">
           <Header />
-          <main className="p-6 h-full bg-neutral-3">{children}</main>
+          <main className="p-6 h-full bg-primary-gray-100">{children}</main>
         </div>
       </div>
     </SessionProvider>

@@ -8,7 +8,7 @@ export default function SignupPage() {
       <p className="text-gray-500 mt-1">프로젝트에 초대받아 시작합니다.</p>
       <div className="mt-6 w-full flex flex-col gap-2 max-w-sm">
         <Input label="회사 이메일" className="bg-white w-96" />
-        <Button disabled label="다음" className="w-96" />
+        <Button label="다음" className="w-96" />
       </div>
       <DividerWithText text="또는" />
 

@@ -6,7 +6,10 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
-const menuItems = [{ name: 'Dashboard', href: '/main', icon: IconHome }];
+const menuItems = [
+  { name: 'Dashboard', href: '/main', icon: IconHome },
+  { name: 'Tasks', href: '/tasks', icon: IconHome },
+];
 
 export default function Sidebar() {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -14,16 +17,16 @@ export default function Sidebar() {
 
   return (
     <aside
-      className={`relative h-screen bg-white flex flex-col border-r border-gray-100 transition-all duration-300 ease-in-out ${
+      className={`relative h-screen bg-white flex flex-col border-r border-gray-300 transition-all duration-300 ease-in-out ${
         isCollapsed ? 'w-20' : 'w-60'
       }`}
     >
-      <div className="h-20 flex items-center justify-center px-5 py-5 border-b border-gray-100">
+      <div className="h-20 flex items-center justify-center px-5 py-5 border-b border-gray-300">
         <div className="overflow-hidden transition-all duration-300 ease-in-out">
           <h1
             className={twAllMerge(
               !isCollapsed &&
-                'opacity-100 text-2xl font-bold text-neutral-1 w-48',
+                'opacity-100 text-2xl font-bold text-gray-900 w-48',
               isCollapsed && 'opacity-0'
             )}
           >
@@ -52,14 +55,14 @@ export default function Sidebar() {
               className={twAllMerge(
                 'flex items-center p-3 rounded-lg transition h-11 w-fit',
                 isActive
-                  ? 'text-primary bg-primary/10 font-semibold'
-                  : 'text-gray-600 hover:bg-primary/10 hover:text-gray-800'
+                  ? 'text-primary-600 bg-primary-600/10 font-semibold'
+                  : 'text-gray-600 hover:bg-primary-gray-200/50'
               )}
             >
               <div className="flex-shrink-0">
                 <Icon
                   size={25}
-                  className={isActive ? 'text-primary' : 'text-gray-500'}
+                  className={isActive ? 'text-primary-600' : 'text-gray-500'}
                 />
               </div>
               <span

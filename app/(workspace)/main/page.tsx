@@ -24,19 +24,19 @@ export default function MainContent() {
         {nftData.map((nft, index) => (
           <div
             key={index}
-            className="relative hover:border hover:border-l-4 hover:border-purple-600 w-80 h-64 bg-white p-4 rounded-2xl border border-l-4 border-gray-100 border-l-purple-400 flex flex-col gap-3"
+            className="relative hover:border hover:border-l-4 hover:border-primary-600 w-80 h-64 bg-white p-4 rounded-2xl border border-l-4 border-gray-100 border-l-primary-400 flex flex-col gap-3"
           >
             <div className="cursor-pointer flex item justify-end absolute right-4">
               <IconPin
                 size={32}
-                className="stroke-gray-200 stroke-1 fill-gray-100"
+                className="stroke-gray-300 stroke-1 fill-gray-200"
               />
             </div>
             <div className="flex items-center justify-start gap-1.5 py-2">
               <span className="bg-yellow-300/40 text-yellow-800 px-3 py-1 text-xs font-semibold rounded-xl">
                 UX Design
               </span>
-              <span className="bg-secondary/25 text-blue-900 px-3 py-1 text-xs font-semibold rounded-xl">
+              <span className="bg-secondary-500/25 text-blue-900 px-3 py-1 text-xs font-semibold rounded-xl">
                 UX Research
               </span>
             </div>
@@ -44,9 +44,9 @@ export default function MainContent() {
               {nft.title}
               <p className="text-body_medium leading-6 text-gray-700">설명</p>
             </div>
-            <div className="w-full flex items-center justify-end gap-1 text-gray-300 pr-2">
+            <div className="w-full flex items-center justify-end gap-1 text-gray-500 pr-2">
               100K+
-              <IconUsers size={23} className="stroke-gray-300" />
+              <IconUsers size={23} className="stroke-gray-500" />
             </div>
           </div>
         ))}

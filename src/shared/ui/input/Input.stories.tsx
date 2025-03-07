@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { IconSearch } from '@tabler/icons-react';
 import { Input } from '..';
-import { IconSearch } from '../icon/IconSearch';
 
 const meta = {
   title: 'Component/Input',
@@ -18,6 +18,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    prefixIcon: <IconSearch />,
+    prefixIcon: <IconSearch className="stroke-1 stroke-gray-700" />,
   },
 };

@@ -53,10 +53,10 @@ const InternalInput = forwardRef<HTMLInputElement, InputProps>(
         {label && (
           <label
             className={twAllMerge(
-              `absolute left-4 text-neutral-2 px-2 text-caption_medium transition-all duration-200`,
+              `absolute left-4 text-gray-700 px-2 text-caption_medium transition-all duration-200`,
               isFocused || value
-                ? '-top-2 text-primary bg-white'
-                : 'top-1/2  -translate-y-1/2 bg-transparent pointer-events-none'
+                ? '-top-2 text-primary-700 bg-white'
+                : 'top-1/2 -translate-y-1/2 bg-transparent pointer-events-none'
             )}
           >
             {label}
@@ -77,9 +77,9 @@ const InternalInput = forwardRef<HTMLInputElement, InputProps>(
           placeholder={isFocused || value ? '' : placeholder} // 포커스되면 placeholder 숨김
           disabled={disabled}
           className={twAllMerge(
-            `peer bg-neutral-3 rounded-lg outline-none
+            `peer rounded-lg outline-none
               h-12 w-80 px-6 py-3 text-headline_2 border
-            border-gray-150 text-neutral-1 focus:border-primary`,
+            border-gray-300 text-gray-800 focus:border-primary-600`,
             prefixIcon && 'pl-14',
             suffixIcon && 'pr-14',
             className
