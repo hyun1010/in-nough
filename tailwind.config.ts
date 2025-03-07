@@ -6,51 +6,81 @@ export default {
     extend: {
       colors: {
         white: '#FFFFFF',
-        primary: '#6200EE', // 강렬한 보라색
-        'primary-hover': '#5600D4', // 조금 더 어두운 보라색
-        'primary-active': '#4B00B8', // 더 어두운 보라색
-        'primary-disabled': '#D1B5FF', // 부드럽고 연한 보라색
+        primary: '#6200EE',
+        'primary-hover': '#5600D4',
+        'primary-active': '#4B00B8',
+        'primary-disabled': '#D1B5FF',
         purple: {
-          50: '#faf5ff',
-          100: '#f4e8ff',
-          200: '#ebd5ff',
-          300: '#dcb4fe',
-          400: '#c484fc',
-          500: '#ac55f7',
-          600: '#9533ea',
-          700: '#7e22ce',
-          800: '#6921a8',
-          900: '#551c87',
-          950: '#390764',
+          50: '#F9F5FF',
+          100: '#F2E8FF',
+          200: '#E0CFFF',
+          300: '#C29DFF',
+          400: '#A572FF',
+          500: '#8B46FF',
+          600: '#7319FF',
+          700: '#5A00DB',
+          800: '#4800B8',
+          900: '#36008F',
+          950: '#240066',
         },
-        secondary: '#1EA7FF', // 하늘색 계열은 그대로
-        'secondary-hover': '#17A1D3',
-        'secondary-active': '#138CB2',
-        'secondary-disabled': '#A2D8FF',
-        bg_disabled: '#F0F0F0', // 배경 비활성화 색상 조정
-        text_disabled: '#A0A0A0', // 텍스트 비활성화 색상도 좀 더 부드럽게
+        secondary: '#00C2FF',
+        'secondary-hover': '#009ECF',
+        'secondary-active': '#0079A3',
+        'secondary-disabled': '#99E5FF',
+        blue: {
+          50: '#F0F9FF',
+          100: '#E0F2FE',
+          200: '#BAE6FD',
+          300: '#7DD3FC',
+          400: '#38BDF8',
+          500: '#0EA5E9',
+          600: '#0284C7',
+          700: '#0369A1',
+          800: '#075985',
+          900: '#0C4A6E',
+          950: '#082F49',
+        },
+        yellow: {
+          50: '#FFFBEB',
+          100: '#FEF3C7',
+          200: '#FDE68A',
+          300: '#FCD34D',
+          400: '#FBBF24',
+          500: '#F59E0B',
+          600: '#D97706',
+          700: '#B45309',
+          800: '#92400E',
+          900: '#78350F',
+          950: '#4C1D09',
+        },
+        accent: {
+          pink: '#FF4DA6',
+          cyan: '#00E0D3',
+        },
+        bg_disabled: '#F3F3F3',
+        text_disabled: '#A8A8A8',
         point: {
-          green: '#34D870', // 그린 계열은 그대로
-          orange: '#FF7043', // 더 자연스러운 오렌지
-          yellow: '#FFB74D', // 좀 더 따뜻한 노랑
+          green: '#34D870',
+          orange: '#FF7043',
+          yellow: '#FFD54F',
         },
         neutral: {
-          1: '#1C1243', // 어두운 중립색
-          2: '#A29EB6', // 기존의 부드러운 회색 계열
-          3: '#EFF1F3', // 기존의 밝은 회색 계열
+          1: '#1A0F3F',
+          2: '#9A94B2',
+          3: '#EFEFF5',
         },
         gray: {
-          50: '#F7F7F7',
-          100: '#E1E1E1',
-          200: '#C4C4C4',
-          300: '#A6A6A6',
-          400: '#888888',
-          500: '#707070', // 기본 회색을 좀 더 어두운 톤으로
-          600: '#585858',
-          700: '#404040',
-          800: '#303030',
-          900: '#202020', // 진한 회색 계열
-          950: '#121212',
+          50: '#FAFAFA',
+          100: '#EAEAEA',
+          200: '#CCCCCC',
+          300: '#ADADAD',
+          400: '#8F8F8F',
+          500: '#757575',
+          600: '#5C5C5C',
+          700: '#444444',
+          800: '#2E2E2E',
+          900: '#1A1A1A',
+          950: '#0D0D0D',
         },
         social: {
           kakao: '#fddc3f',
@@ -58,6 +88,7 @@ export default {
           naver: '#00c300',
         },
       },
+
       fontFamily: {
         'dm-sans': [
           'var(--dm-sans)',

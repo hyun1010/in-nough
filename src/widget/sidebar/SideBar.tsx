@@ -14,7 +14,7 @@ export default function Sidebar() {
 
   return (
     <aside
-      className={`relative h-screen bg-neutral-4 shadow-sm flex flex-col border-r border-gray-100 transition-all duration-300 ease-in-out ${
+      className={`relative h-screen bg-white flex flex-col border-r border-gray-100 transition-all duration-300 ease-in-out ${
         isCollapsed ? 'w-20' : 'w-60'
       }`}
     >
@@ -27,7 +27,7 @@ export default function Sidebar() {
               isCollapsed && 'opacity-0'
             )}
           >
-            이너프
+            이너-프
           </h1>
         </div>
         <Button

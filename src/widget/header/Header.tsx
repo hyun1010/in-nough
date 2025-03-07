@@ -8,11 +8,11 @@ export default function Index() {
   const { data: session } = useSession();
 
   return (
-    <header className="w-full bg-neutral-4 min-h-20 h-20 flex items-center justify-between border-b border-gray-100 px-6">
-      <h1 className="text-title text-neutral-1 truncate">All Projects</h1>
+    <header className="w-full bg-white min-h-20 h-20 flex items-center justify-between border-b border-gray-100 px-6">
+      <h1 className="text-title text-neutral-1 truncate">내 프로젝트</h1>
       <div className="flex-1 flex justify-center">
         <Input
-          className="h-11 w-96 bg-neutral-3"
+          className="h-11 w-96"
           placeholder="Search"
           suffixIcon={
             <IconSearch className="stroke-1.5 group-focus-within:stroke-primary" />
