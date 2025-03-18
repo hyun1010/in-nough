@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { dm_sans, noto_sans } from './fonts';
 import './globals.css';
+import QueryProvider from './provider';
 
 export const metadata: Metadata = {
   title: '이너-프',
@@ -14,7 +15,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         lang="en"
         className={`${noto_sans.variable} ${dm_sans.variable} font-dm-sans`}
       >
-        {children}
+        <QueryProvider>{children}</QueryProvider>
       </body>
     </html>
   );

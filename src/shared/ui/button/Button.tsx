@@ -1,9 +1,10 @@
 import { VariantType } from '@/shared/model';
 import { ShapeType } from '@/shared/model/types';
-import { twAllMerge } from '@/shared/utils';
+import { cn } from '@/shared/utils';
 
 export interface ButtonProps {
   variant?: VariantType;
+  type?: React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
   shape?: ShapeType;
   disabled?: boolean;
   label?: string;
@@ -15,6 +16,7 @@ export interface ButtonProps {
 export default function InternalButton({
   variant = 'primary',
   shape = 'default',
+  type = 'button',
   label,
   onClick,
   prefixIcon,
@@ -55,7 +57,8 @@ export default function InternalButton({
 
   return (
     <button
-      className={twAllMerge(
+      type={type}
+      className={cn(
         'w-80 text-white py-3 flex items-center justify-center rounded-md text-headline_2',
         variant === 'primary' && primaryButtonClasses,
         variant === 'secondary' && secondaryButtonClasses,

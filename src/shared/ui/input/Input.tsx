@@ -1,6 +1,6 @@
 'use client';
 import { twAllMerge } from '@/shared/utils';
-import { ForwardedRef, forwardRef, useEffect, useState } from 'react';
+import { ForwardedRef, forwardRef, useState } from 'react';
 
 export interface InputProps {
   label?: string;
@@ -21,7 +21,7 @@ const InternalInput = forwardRef<HTMLInputElement, InputProps>(
     const {
       label,
       type = 'text',
-      value: initValue,
+      value,
       disabled,
       placeholder = '',
       maxLength,
@@ -32,21 +32,15 @@ const InternalInput = forwardRef<HTMLInputElement, InputProps>(
       className,
     } = props;
 
-    const [value, setValue] = useState('');
     const [isFocused, setIsFocused] = useState(false);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      setValue(e.target.value);
       onChange?.(e.target.value);
     };
 
     const handleOnKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
       if (e.key === 'Enter') onSubmit?.(e);
     };
-
-    useEffect(() => {
-      if (initValue) setValue(initValue);
-    }, [initValue]);
 
     return (
       <div className="relative h-fit group">

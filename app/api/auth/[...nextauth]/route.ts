@@ -1,4 +1,6 @@
+import { api } from '@/shared/utils';
 import NextAuth from 'next-auth';
+import CredentialsProvider from 'next-auth/providers/credentials';
 import GoogleProvider from 'next-auth/providers/google';
 import KakaoProvider from 'next-auth/providers/kakao';
 import NaverProvider from 'next-auth/providers/naver';
@@ -16,6 +18,27 @@ const authOptions = {
     NaverProvider({
       clientId: process.env.NAVER_CLIENT_ID!,
       clientSecret: process.env.NAVER_CLIENT_SECRET!,
+    }),
+    CredentialsProvider({
+      name: 'Credentials',
+      credentials: {
+        username: { label: 'Username', type: 'text' },
+        password: { label: 'Password', type: 'password' },
+      },
+      async authorize(credentials) {
+        try {
+          console.log('🚀 ~ authorize ~ credentials:', credentials);
+
+          const { data } = await api.post('/api/auth/login', credentials);
+
+          if (data) {
+            return data;
+          }
+        } catch (e) {
+          console.log('🚀 ~ authorize ~ e:', e);
+        }
+        return null;
+      },
     }),
   ],
   session: {
