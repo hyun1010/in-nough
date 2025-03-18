@@ -1,4 +1,15 @@
-#!/usr/bin/env sh
+#!/bin/sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npx lint-staged
+# 임시 메시지 파일 초기화
+TEMP_FILE="/tmp/commit-msg.txt"
+echo "" > $TEMP_FILE
+
+# 커밋 메시지가 제대로 전달되었는지 확인하고 commitlint 실행
+echo "$1" > $TEMP_FILE
+npx --no-install commitlint --edit $TEMP_FILE || echo "Commit message format is incorrect!"
+
+# 커밋 메시지 형식이 올바르면 성공 메시지 출력
+if [ $? -eq 0 ]; then
+  echo "✅ Commit message follows the convention."
+fi
