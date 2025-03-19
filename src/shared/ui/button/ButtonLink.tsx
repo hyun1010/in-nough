@@ -1,5 +1,6 @@
 'use client';
 import { cn } from '@/shared/utils';
+import Link from 'next/link';
 import {
   ghostButtonClasses,
   plainButtonClasses,
@@ -8,26 +9,24 @@ import {
 } from './styles';
 import { BaseButtonProps } from './types';
 
-export interface ButtonProps extends BaseButtonProps {
-  type?: React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
-  onClick?: () => void;
+export interface ButtonLinkProps extends BaseButtonProps {
+  href: string;
 }
-export default function InternalButton({
+export default function InternalButtonLink({
   variant = 'primary',
   shape = 'default',
-  type = 'button',
   label,
-  onClick,
+  href,
   prefixIcon,
   suffixIcon,
   disabled = false,
   className,
-}: ButtonProps) {
+}: ButtonLinkProps) {
   const isOnlyIcon = label === undefined && (prefixIcon || !suffixIcon);
 
   return (
-    <button
-      type={type}
+    <Link
+      href={href}
       className={cn(
         'w-80 text-white py-3 flex items-center justify-center rounded-md text-headline_2',
         variant === 'primary' && primaryButtonClasses,
@@ -39,12 +38,10 @@ export default function InternalButton({
         disabled && 'opacity-70 cursor-not-allowed',
         className
       )}
-      onClick={onClick}
-      disabled={disabled}
     >
       {prefixIcon && prefixIcon}
       {label && label}
       {suffixIcon && suffixIcon}
-    </button>
+    </Link>
   );
 }
