@@ -1,14 +1,12 @@
 'use client';
+import { CredentialType } from '@/entities/auth';
 import { Button, Form, Input } from '@/shared/ui';
 import { cn } from '@/shared/utils';
-import { Controller, UseFormProps } from 'react-hook-form';
+import { UseFormProps } from 'react-hook-form';
 
 interface AuthFormProps {
   className?: string;
-  formOptions?: UseFormProps<{
-    email: string;
-    password: string;
-  }>;
+  formOptions?: UseFormProps<CredentialType>;
   onSubmit: (form) => void;
   submitBtnLabel?: string;
 }
@@ -31,7 +29,7 @@ export function AuthForm({
           <Input {...field} className="bg-white w-96" placeholder="아이디" />
         )}
       />
-      <Controller
+      <Form.Content
         name={'password'}
         render={({ field }) => (
           <Input
