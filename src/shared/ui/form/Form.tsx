@@ -1,12 +1,8 @@
 'use client';
 import { cn } from '@/shared/utils';
-import { FormProvider, useForm, UseFormProps } from 'react-hook-form';
-export interface FormProps {
-  onSubmit: (form) => void;
-  className?: string;
-  children: React.ReactNode;
-  formOptions?: UseFormProps;
-}
+import { FormProvider, useForm } from 'react-hook-form';
+import { FormProps } from './types';
+
 export default function InternalForm({
   onSubmit,
   className,

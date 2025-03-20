@@ -6,12 +6,8 @@ import {
   primaryButtonClasses,
   secondaryButtonClasses,
 } from './styles';
-import { BaseButtonProps } from './types';
+import { ButtonProps } from './types';
 
-export interface ButtonProps extends BaseButtonProps {
-  type?: React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
-  onClick?: () => void;
-}
 export default function InternalButton({
   variant = 'primary',
   shape = 'default',

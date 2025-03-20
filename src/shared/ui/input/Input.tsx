@@ -1,20 +1,7 @@
 'use client';
 import { twAllMerge } from '@/shared/utils';
 import { ForwardedRef, forwardRef, useState } from 'react';
-
-export interface InputProps {
-  label?: string;
-  type?: React.HTMLInputTypeAttribute;
-  value?: string;
-  disabled?: boolean;
-  placeholder?: string;
-  maxLength?: number;
-  prefixIcon?: React.ReactNode;
-  suffixIcon?: React.ReactNode;
-  onChange?: (value: string) => void;
-  onSubmit?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
-  className?: string;
-}
+import { InputProps } from './types';
 
 const InternalInput = forwardRef<HTMLInputElement, InputProps>(
   (props, ref: ForwardedRef<HTMLInputElement>) => {
@@ -40,6 +27,12 @@ const InternalInput = forwardRef<HTMLInputElement, InputProps>(
 
     const handleOnKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
       if (e.key === 'Enter') onSubmit?.(e);
+    };
+
+    const handleMaxLength = (e: React.ChangeEvent<HTMLInputElement>) => {
+      if (type === 'number' && maxLength && e.target.value.length > maxLength) {
+        e.target.value = e.target.value.slice(0, maxLength);
+      }
     };
 
     return (
@@ -78,6 +71,7 @@ const InternalInput = forwardRef<HTMLInputElement, InputProps>(
             suffixIcon && 'pr-14',
             className
           )}
+          onInput={handleMaxLength}
           onChange={handleChange}
           onKeyDown={handleOnKeyDown}
           onFocus={() => setIsFocused(true)}

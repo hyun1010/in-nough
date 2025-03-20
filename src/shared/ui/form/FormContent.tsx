@@ -1,14 +1,8 @@
 'use client';
-import { ReactElement } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
+import { FormContentProps } from './types';
 
-export default function FormContent({
-  name,
-  render,
-}: {
-  name: string;
-  render: ({ field, fieldState, formState }) => ReactElement;
-}) {
+export default function FormContent({ name, render }: FormContentProps) {
   const { control } = useFormContext();
   return <Controller name={name} control={control} render={render} />;
 }

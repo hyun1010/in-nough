@@ -7,11 +7,8 @@ import {
   primaryButtonClasses,
   secondaryButtonClasses,
 } from './styles';
-import { BaseButtonProps } from './types';
+import { ButtonLinkProps } from './types';
 
-export interface ButtonLinkProps extends BaseButtonProps {
-  href: string;
-}
 export default function InternalButtonLink({
   variant = 'primary',
   shape = 'default',

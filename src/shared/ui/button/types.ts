@@ -10,3 +10,12 @@ export interface BaseButtonProps {
   className?: string;
   disabled?: boolean;
 }
+
+export interface ButtonProps extends BaseButtonProps {
+  type?: React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
+  onClick?: () => void;
+}
+
+export interface ButtonLinkProps extends BaseButtonProps {
+  href: string;
+}
