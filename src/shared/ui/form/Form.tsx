@@ -1,15 +1,12 @@
 'use client';
 import { cn } from '@/shared/utils';
-import { FormProvider, useForm } from 'react-hook-form';
-import { FormProps } from './types';
-
+import { FormProvider } from 'react-hook-form';
 export default function InternalForm({
   onSubmit,
   className,
   children,
-  formOptions = {},
-}: FormProps) {
-  const methods = useForm(formOptions);
+  methods,
+}) {
   return (
     <FormProvider {...methods}>
       <form

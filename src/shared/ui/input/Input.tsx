@@ -1,8 +1,8 @@
 'use client';
 import { twAllMerge } from '@/shared/utils';
 import { ForwardedRef, forwardRef, useState } from 'react';
+import './styles.css';
 import { InputProps } from './types';
-
 const InternalInput = forwardRef<HTMLInputElement, InputProps>(
   (props, ref: ForwardedRef<HTMLInputElement>) => {
     const {

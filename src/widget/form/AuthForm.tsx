@@ -2,26 +2,30 @@
 import { CredentialType } from '@/entities/auth';
 import { Button, Form, Input } from '@/shared/ui';
 import { cn } from '@/shared/utils';
-import { UseFormProps } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 
 interface AuthFormProps {
   className?: string;
-  formOptions?: UseFormProps<CredentialType>;
   onSubmit: (form) => void;
   submitBtnLabel?: string;
 }
 
 export function AuthForm({
   className,
-  formOptions,
   onSubmit,
   submitBtnLabel = '로그인',
 }: AuthFormProps) {
+  const methods = useForm<CredentialType>({
+    defaultValues: {
+      email: '',
+      password: '',
+    },
+  });
   return (
     <Form
-      formOptions={formOptions as UseFormProps}
       className={cn('h-fit space-y-2 pt-4 pb-2', className)}
       onSubmit={onSubmit}
+      methods={methods}
     >
       <Form.Content
         name={'email'}

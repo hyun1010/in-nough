@@ -1,1 +1,1 @@
-export type { CredentialType } from './credential';
+export type * from './types';
