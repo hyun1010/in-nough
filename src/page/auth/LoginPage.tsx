@@ -1,7 +1,7 @@
 'use client';
 import { SocialButton } from '@/features';
 import { DividerWithText } from '@/shared/ui';
-import { AuthForm } from '@/widget/auth';
+import { AuthForm } from '@/widget/form';
 import { signIn } from 'next-auth/react';
 
 export function LoginPage() {
