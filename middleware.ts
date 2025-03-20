@@ -7,7 +7,7 @@ const withAuth = async (req: NextRequest, token: boolean) => {
   const { pathname } = req.nextUrl;
 
   if (!token) {
-    url.pathname = '/signin';
+    url.pathname = '/login';
     url.search = `callbackUrl=${pathname}`;
 
     return NextResponse.redirect(url);
@@ -30,7 +30,7 @@ const withOutAuth = async (
 };
 
 const withAuthList = ['/main'];
-const withOutAuthList = ['/signin', '/signup'];
+const withOutAuthList = ['/login', '/signup'];
 
 export default async function middleware(req: NextRequest) {
   const cookie = req.cookies.get('Authroization')?.value || '';
