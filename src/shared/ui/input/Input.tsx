@@ -66,7 +66,7 @@ const InternalInput = forwardRef<HTMLInputElement, InputProps>(
         <input
           ref={ref}
           type={type}
-          value={value}
+          value={value || ''}
           maxLength={maxLength}
           placeholder={isFocused || value ? '' : placeholder} // 포커스되면 placeholder 숨김
           disabled={disabled}

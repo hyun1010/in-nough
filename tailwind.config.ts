@@ -161,6 +161,7 @@ export default {
         headline_2: ['1rem', { lineHeight: '1.5rem' }],
         body_bold: ['0.875rem', { lineHeight: '1.25rem', fontWeight: '700' }],
         body_medium: ['0.875rem', { lineHeight: '1.25rem', fontWeight: '500' }],
+        body_nomal: ['0.875rem', { lineHeight: '1.25rem', fontWeight: '400' }],
         caption_medium: [
           '0.75rem',
           { lineHeight: '1.25rem', fontWeight: '500' },
