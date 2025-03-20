@@ -10,6 +10,7 @@ export interface FormProps {
 
 export interface FormContentProps {
   name: string;
+  defaultValue?: string;
   render: ({ field, fieldState, formState }) => ReactElement;
 }
 

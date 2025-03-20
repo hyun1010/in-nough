@@ -4,7 +4,7 @@ import { Button, Input } from '@/shared/ui';
 import { IconBell, IconSearch } from '@tabler/icons-react';
 import { useSession } from 'next-auth/react';
 
-export default function Index() {
+export function Header() {
   const { data: session } = useSession();
 
   return (

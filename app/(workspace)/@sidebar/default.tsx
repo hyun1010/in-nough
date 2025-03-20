@@ -1,5 +1,5 @@
-import { SideBar } from '@/widget';
+import { Sidebar } from '@/widget/layout';
 
 export default function page() {
-  return <SideBar />;
+  return <Sidebar />;
 }

@@ -1,17 +1,13 @@
 'use client';
+import { menu_items } from '@/entities/mocks';
 import { Button } from '@/shared/ui';
 import { twAllMerge } from '@/shared/utils';
-import { IconChevronRight, IconHome } from '@tabler/icons-react';
+import { IconChevronRight } from '@tabler/icons-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
-const menuItems = [
-  { name: 'Dashboard', href: '/main', icon: IconHome },
-  { name: 'Tasks', href: '/tasks', icon: IconHome },
-];
-
-export default function Sidebar() {
+export function Sidebar() {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const pathname = usePathname();
 
@@ -46,7 +42,7 @@ export default function Sidebar() {
       </div>
 
       <nav className="flex flex-col space-y-2 items-center py-5 font-noto-sans">
-        {menuItems.map(({ name, href, icon: Icon }) => {
+        {menu_items.map(({ name, href, icon: Icon }) => {
           const isActive = pathname === href;
           return (
             <Link
