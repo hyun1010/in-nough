@@ -2,7 +2,7 @@
 import { Logo } from '@/shared/ui';
 import { EmailForm } from '@/widget/form';
 
-export function SignFormPage() {
+export function CompanyPage() {
   const handleSubmit = (form) => {
     console.log(form);
   };

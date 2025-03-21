@@ -1,15 +1,10 @@
-'use client';
 import { Button } from '@/shared/ui';
-import { usePathname } from 'next/navigation';
 
 export default function AuthLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const pathname = usePathname();
-
-  if (pathname.startsWith('/signup/')) return children;
   return (
     <div className="flex h-screen min-h-[430px]">
       <div className="grow flex flex-col justify-center items-center bg-white p-10">
