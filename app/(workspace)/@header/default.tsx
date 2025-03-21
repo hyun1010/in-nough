@@ -1,4 +1,4 @@
-import { Header } from '@/widget/layout/workspace';
+import { Header } from '@/widget/workspace';
 
 export default function page() {
   return <Header />;
