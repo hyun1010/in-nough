@@ -1,3 +1,4 @@
+import { PATH_NAME } from '@/shared/model';
 import { api } from '@/shared/utils';
 import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
@@ -27,8 +28,6 @@ const authOptions = {
       },
       async authorize(credentials) {
         try {
-          console.log('🚀 ~ authorize ~ credentials:', credentials);
-
           const { data } = await api.post('/api/auth/login', credentials);
 
           if (data) {
@@ -69,7 +68,7 @@ const authOptions = {
     },
   },
   pages: {
-    signIn: '/login',
+    signIn: PATH_NAME.AUTH.LOGIN,
   },
 };
 

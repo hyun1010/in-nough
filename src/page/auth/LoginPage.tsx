@@ -1,5 +1,6 @@
 'use client';
 import { SocialButton } from '@/features';
+import { PATH_NAME } from '@/shared/model';
 import { DividerWithText } from '@/shared/ui';
 import { AuthForm } from '@/widget/form';
 import { signIn } from 'next-auth/react';
@@ -10,10 +11,10 @@ export function LoginPage() {
       username: form.username,
       password: form.password,
       redirect: false,
-      callbackUrl: '/main',
+      callbackUrl: PATH_NAME.WORKSPACE.MAIN,
     });
     if (result?.ok) {
-      window.location.href = result.url || '/main';
+      window.location.href = result.url || PATH_NAME.WORKSPACE.MAIN;
     }
   };
 

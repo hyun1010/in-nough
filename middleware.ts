@@ -1,13 +1,14 @@
+import { PATH_NAME } from '@/shared/model';
 import { getToken } from 'next-auth/jwt';
 import { NextRequest, NextResponse } from 'next/server';
 
-const FALLBACK_URL = '/main';
+const FALLBACK_URL = PATH_NAME.WORKSPACE.MAIN;
 const withAuth = async (req: NextRequest, token: boolean) => {
   const url = req.nextUrl.clone();
   const { pathname } = req.nextUrl;
 
   if (!token) {
-    url.pathname = '/login';
+    url.pathname = PATH_NAME.AUTH.LOGIN;
     url.search = `callbackUrl=${pathname}`;
 
     return NextResponse.redirect(url);
@@ -29,8 +30,8 @@ const withOutAuth = async (
   }
 };
 
-const withAuthList = ['/main'];
-const withOutAuthList = ['/login', '/signup'];
+const withAuthList = [PATH_NAME.WORKSPACE.MAIN];
+const withOutAuthList = [PATH_NAME.AUTH.LOGIN, PATH_NAME.AUTH.SIGNUP];
 
 export default async function middleware(req: NextRequest) {
   const cookie = req.cookies.get('Authroization')?.value || '';

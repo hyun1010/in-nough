@@ -1,4 +1,5 @@
 'use client';
+import { COMPANY_PATH, PATH_NAME } from '@/shared/model';
 import { DividerWithText, Logo } from '@/shared/ui';
 import { EmailForm } from '@/widget/form';
 import Link from 'next/link';
@@ -13,7 +14,7 @@ export function CompanyPage() {
      * 있다면 routing
      */
     console.log(form);
-    router.push('/company/join');
+    router.push(PATH_NAME.COMPANY(COMPANY_PATH.JOIN));
   };
 
   return (
@@ -22,7 +23,7 @@ export function CompanyPage() {
       <EmailForm onSubmit={handleSubmit} />
       <DividerWithText text="또는" />
       <Link
-        href={'/company/register'}
+        href={PATH_NAME.COMPANY(COMPANY_PATH.REGISTER)}
         className="bg-purple-100 text-purple-900 text-sm px-3 py-1 rounded-full hover:underline"
       >
         아직 등록된 기업이 없나요? 기업을 등록해보세요.

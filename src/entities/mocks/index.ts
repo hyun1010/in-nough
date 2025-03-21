@@ -1,3 +1,4 @@
+import { PATH_NAME } from '@/shared/model';
 import { IconHome } from '@tabler/icons-react';
 
 export const project_data = [
@@ -16,6 +17,6 @@ export const project_data = [
 ];
 
 export const menu_items = [
-  { name: 'Dashboard', href: '/main', icon: IconHome },
-  { name: 'Tasks', href: '/tasks', icon: IconHome },
+  { name: 'Dashboard', href: PATH_NAME.WORKSPACE.MAIN, icon: IconHome },
+  { name: 'Tasks', href: PATH_NAME.WORKSPACE.TASKS, icon: IconHome },
 ];
