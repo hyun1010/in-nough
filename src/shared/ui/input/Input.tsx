@@ -1,6 +1,6 @@
 'use client';
-import { twAllMerge } from '@/shared/utils';
-import { ForwardedRef, forwardRef, useState } from 'react';
+import { cn } from '@/shared/utils';
+import { ForwardedRef, forwardRef, useMemo, useState } from 'react';
 import './styles.css';
 import { InputProps } from './types';
 const InternalInput = forwardRef<HTMLInputElement, InputProps>(
@@ -21,6 +21,11 @@ const InternalInput = forwardRef<HTMLInputElement, InputProps>(
 
     const [isFocused, setIsFocused] = useState(false);
 
+    const placeholderText = useMemo(() => {
+      if (label) return isFocused ? placeholder : '';
+      return placeholder;
+    }, [label]);
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       onChange?.(e.target.value);
     };
@@ -39,11 +44,16 @@ const InternalInput = forwardRef<HTMLInputElement, InputProps>(
       <div className="relative h-fit group">
         {label && (
           <label
-            className={twAllMerge(
-              `absolute left-4 text-gray-700 px-2 text-caption_medium transition-all duration-200`,
-              isFocused || value
-                ? '-top-2 text-primary-700 bg-white'
-                : 'top-1/2 -translate-y-1/2 bg-transparent pointer-events-none'
+            className={cn(
+              `absolute left-4 text-gray-700 px-2 text-body_nomal transition-all duration-200`,
+              {
+                'top-1/2 -translate-y-1/2 bg-transparent pointer-events-none':
+                  !isFocused && !value,
+              },
+              {
+                '-top-2 text-primary-700 bg-white text-caption_medium':
+                  isFocused || value,
+              }
             )}
           >
             {label}
@@ -61,9 +71,9 @@ const InternalInput = forwardRef<HTMLInputElement, InputProps>(
           type={type}
           value={value || ''}
           maxLength={maxLength}
-          placeholder={isFocused || value ? '' : placeholder} // 포커스되면 placeholder 숨김
+          placeholder={placeholderText}
           disabled={disabled}
-          className={twAllMerge(
+          className={cn(
             `peer rounded-lg outline-none
               h-12 w-80 px-6 py-3 text-headline_2 border
             border-gray-300 text-gray-800 focus:border-primary-600`,
