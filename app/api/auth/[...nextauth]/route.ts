@@ -1,4 +1,5 @@
 import { PATH_NAME } from '@/shared/model';
+import { PERSONAL_PATH } from '@/shared/model/path';
 import { api } from '@/shared/utils';
 import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
@@ -46,8 +47,23 @@ const authOptions = {
   },
 
   callbacks: {
-    async signIn() {
-      return true;
+    async signIn({ user }) {
+      try {
+        console.log('🚀 ~ signIn ~ user:', user);
+        // const res = await fetch(`/api/auth/check-user?id=${user.id}`);
+        // const { isNewUser } = await res.json();
+
+        const isNewUser = true;
+
+        if (isNewUser) {
+          return PATH_NAME.PERSOANL(PERSONAL_PATH.JOIN); // 새 회원: 회원 정보 입력 FORM 리다이렉트
+        }
+
+        return true; // 기존 회원: 바로 로그인
+      } catch (e) {
+        console.error(e);
+        return false;
+      }
     },
     async jwt({ token, account, user }) {
       if (account) {
