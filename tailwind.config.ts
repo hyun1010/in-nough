@@ -154,6 +154,7 @@ export default {
           'sans-serif',
         ],
         'noto-sans': ['var(--noto-sans)', 'dotum', 'system-ui', 'sans-serif'],
+        logo: ['var(--archivo-black)', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         title: ['1.5rem', { lineHeight: '2rem', fontWeight: '700' }],

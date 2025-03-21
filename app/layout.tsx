@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { dm_sans, noto_sans } from './fonts';
+import { archivo_black, dm_sans, noto_sans } from './fonts';
 import './globals.css';
 import QueryProvider from './provider';
 
@@ -13,7 +13,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <body
         lang="en"
-        className={`${noto_sans.variable} ${dm_sans.variable} font-dm-sans`}
+        className={`${noto_sans.variable} ${dm_sans.variable} ${archivo_black.variable} font-dm-sans`}
       >
         <QueryProvider>{children}</QueryProvider>
       </body>
