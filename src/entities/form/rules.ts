@@ -19,3 +19,8 @@ export const usernameSchema = yup
   .string()
   .min(2, '사용자 이름은 2글자 이상이어야 합니다')
   .required('이름을 입력해 주세요');
+
+export const emailSchema = yup
+  .string()
+  .email('올바른 이메일 형식이 아닙니다.')
+  .required('이메일을 입력해 주세요');
