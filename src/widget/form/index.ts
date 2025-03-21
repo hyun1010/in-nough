@@ -1,3 +1,4 @@
 export { AuthForm } from './AuthForm';
-export { SignForm } from './SignForm';
 export { EmailForm } from './EmailForm';
+export { FormLayout } from './FormLayout';
+export { SignForm } from './SignForm';

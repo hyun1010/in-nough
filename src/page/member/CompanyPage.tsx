@@ -1,7 +1,7 @@
 'use client';
 import { COMPANY_PATH, PATH_NAME } from '@/shared/model';
-import { DividerWithText, Logo } from '@/shared/ui';
-import { EmailForm } from '@/widget/form';
+import { DividerWithText } from '@/shared/ui';
+import { EmailForm, FormLayout } from '@/widget/form';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
@@ -18,8 +18,7 @@ export function CompanyPage() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-full h-screen bg-white p-10">
-      <Logo />
+    <FormLayout>
       <EmailForm onSubmit={handleSubmit} />
       <DividerWithText text="또는" />
       <Link
@@ -28,6 +27,6 @@ export function CompanyPage() {
       >
         아직 등록된 기업이 없나요? 기업을 등록해보세요.
       </Link>
-    </div>
+    </FormLayout>
   );
 }
