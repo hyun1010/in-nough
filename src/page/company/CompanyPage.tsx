@@ -2,11 +2,20 @@
 import { DividerWithText, Logo } from '@/shared/ui';
 import { EmailForm } from '@/widget/form';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export function CompanyPage() {
+  const router = useRouter();
   const handleSubmit = (form) => {
+    /**
+     * 등록된 기업인 지 확인
+     * 없다면 error
+     * 있다면 routing
+     */
     console.log(form);
+    router.push('/company/join');
   };
+
   return (
     <div className="flex flex-col items-center justify-center w-full h-screen bg-white p-10">
       <Logo />
