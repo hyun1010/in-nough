@@ -1,5 +1,4 @@
-import { VariantType } from '@/shared/model';
-import { ShapeType } from '@/shared/model/types';
+import { ShapeType, VariantType } from '@/shared/model';
 
 export interface BaseButtonProps {
   variant?: VariantType;

@@ -2,7 +2,7 @@ export const primaryButtonClasses = `
     bg-primary-600 
     hover:bg-primary-700 
     active:bg-primary-800 
-    disabled:bg-primary-800/30
+    disabled:bg-primary-800/40
   `;
 
 export const secondaryButtonClasses = `
