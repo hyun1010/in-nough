@@ -24,9 +24,9 @@ export function LoginPage() {
       <AuthForm onSubmit={handleSubmit} />
       <DividerWithText text="또는" />
       <div className="w-full max-w-sm space-y-3">
-        <SocialButton.Google />
-        <SocialButton.Kakao />
-        <SocialButton.Naver />
+        <SocialButton.Google text="Google 계정으로 로그인" />
+        <SocialButton.Kakao text="Kakao 계정으로 로그인" />
+        <SocialButton.Naver text="Naver 계정으로 로그인" />
       </div>
     </div>
   );

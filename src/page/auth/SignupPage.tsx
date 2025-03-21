@@ -10,7 +10,7 @@ export function SignupPage() {
       <Button.Link
         href={PATH_NAME.COMPANY(COMPANY_PATH.ROOT)}
         label="기업"
-        className="mt-3"
+        className="mt-3 w-96"
       />
       <DividerWithText text="또는" />
       <Tip message="일반 계정으로 만들기" />
