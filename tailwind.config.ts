@@ -167,6 +167,10 @@ export default {
           '0.75rem',
           { lineHeight: '1.25rem', fontWeight: '500' },
         ],
+        caption_nomal: [
+          '0.75rem',
+          { lineHeight: '1.25rem', fontWeight: '400' },
+        ],
       },
     },
   },
