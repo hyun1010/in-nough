@@ -1,28 +1,35 @@
+import { HTMLInputTypeAttribute } from 'react';
 import Form from '../form';
 import Input from '../input';
 
 interface SingleFieldProps {
-  label: string;
+  type?: HTMLInputTypeAttribute;
+  label?: string;
   name: string;
   required?: boolean;
+  readOnly?: boolean;
   placeholder?: string;
 }
 export default function SingleField({
+  type,
   label,
   name,
   required,
+  readOnly,
   placeholder,
 }: SingleFieldProps) {
   return (
     <Form.Field>
-      <Form.Label required={required}>{label}</Form.Label>
+      {label && <Form.Label required={required}>{label}</Form.Label>}
       <Form.Content
         name={name}
         render={({ field }) => (
           <Input
             {...field}
-            className="bg-white w-full text-body_nomal px-4 h-10"
+            type={type}
+            className="w-full text-body_nomal px-4 h-10"
             placeholder={placeholder}
+            readOnly={readOnly}
           />
         )}
       />
