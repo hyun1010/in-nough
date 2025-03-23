@@ -1,11 +1,20 @@
+'use client';
+import { IconExclamationCircleFilled } from '@tabler/icons-react';
+import { useId } from 'react';
+import { Tooltip } from 'react-tooltip';
 import Form from '../form';
 import Input from '../input';
 
-export default function PhoneField() {
+export default function PhoneField({
+  errorMessage,
+}: {
+  errorMessage?: string;
+}) {
+  const id = useId();
   return (
     <Form.Field>
       <Form.Label required>핸드폰 번호</Form.Label>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 relative">
         <Form.Content
           name="phoneNumber.start"
           render={({ field }) => (
@@ -44,6 +53,17 @@ export default function PhoneField() {
             />
           )}
         />
+        {errorMessage && (
+          <>
+            <div
+              data-tooltip-id={`tooltip_${id}`}
+              className="text-primary-600 absolute right-0 mr-2"
+            >
+              <IconExclamationCircleFilled size={20} />
+            </div>
+            <Tooltip id={`tooltip_${id}`} place="top" content={errorMessage} />
+          </>
+        )}
       </div>
     </Form.Field>
   );
