@@ -9,6 +9,7 @@ interface SingleFieldProps {
   required?: boolean;
   readOnly?: boolean;
   placeholder?: string;
+  errorMessage?: string;
 }
 export default function SingleField({
   type,
@@ -16,6 +17,7 @@ export default function SingleField({
   name,
   required,
   readOnly,
+  errorMessage,
   placeholder,
 }: SingleFieldProps) {
   return (
@@ -30,6 +32,7 @@ export default function SingleField({
             className="w-full text-body_nomal px-4 h-10"
             placeholder={placeholder}
             readOnly={readOnly}
+            errorMessage={errorMessage}
           />
         )}
       />
