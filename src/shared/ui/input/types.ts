@@ -2,6 +2,7 @@ export interface InputProps {
   label?: string;
   type?: React.HTMLInputTypeAttribute;
   value?: string;
+  readOnly?: boolean;
   disabled?: boolean;
   placeholder?: string;
   maxLength?: number;

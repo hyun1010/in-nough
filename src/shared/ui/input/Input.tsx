@@ -8,6 +8,7 @@ const InternalInput = forwardRef<HTMLInputElement, InputProps>(
     const {
       label,
       type = 'text',
+      readOnly,
       value,
       disabled,
       placeholder = '',
@@ -24,7 +25,7 @@ const InternalInput = forwardRef<HTMLInputElement, InputProps>(
     const placeholderText = useMemo(() => {
       if (label) return isFocused ? placeholder : '';
       return placeholder;
-    }, [label]);
+    }, [isFocused, label, placeholder]);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       onChange?.(e.target.value);
@@ -73,12 +74,14 @@ const InternalInput = forwardRef<HTMLInputElement, InputProps>(
           maxLength={maxLength}
           placeholder={placeholderText}
           disabled={disabled}
+          readOnly={readOnly}
           className={cn(
             `peer rounded-lg outline-none
               h-12 w-80 px-6 py-3 text-headline_2 border
             border-gray-300 text-gray-800 focus:border-primary-600`,
             prefixIcon && 'pl-14',
             suffixIcon && 'pr-14',
+            { 'bg-gray-100 focus:border-gray-300': readOnly },
             className
           )}
           onInput={handleMaxLength}
