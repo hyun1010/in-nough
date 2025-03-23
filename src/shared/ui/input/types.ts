@@ -8,6 +8,7 @@ export interface InputProps {
   maxLength?: number;
   prefixIcon?: React.ReactNode;
   suffixIcon?: React.ReactNode;
+  errorMessage?: string;
   onChange?: (value: string) => void;
   onSubmit?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   className?: string;
