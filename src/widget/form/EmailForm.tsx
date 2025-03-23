@@ -1,5 +1,5 @@
 'use client';
-import { emailSchema } from '@/entities/form/rules';
+import { emailSchema } from '@/entities/form';
 import { Button, Form, Input } from '@/shared/ui';
 import { cn, resolver } from '@/shared/utils';
 import { useForm } from 'react-hook-form';
