@@ -40,7 +40,9 @@ export function SignForm({ memberType }: MemberTypeProps) {
       methods={methods}
       onSubmit={handleSubmit}
     >
-      <InputField.Single required label="회사명" name="company" readOnly />
+      {memberType === 'company' && (
+        <InputField.Single required label="회사명" name="company" readOnly />
+      )}
       <InputField.Single
         required
         label="이름"
