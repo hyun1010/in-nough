@@ -1,7 +1,7 @@
 'use client';
 import { cn } from '@/shared/utils';
 import { IconExclamationCircleFilled } from '@tabler/icons-react';
-import { ForwardedRef, forwardRef, useMemo, useState } from 'react';
+import { ForwardedRef, forwardRef, useId, useMemo, useState } from 'react';
 import { Tooltip } from 'react-tooltip';
 import './styles.css';
 import { InputProps } from './types';
@@ -22,7 +22,7 @@ const InternalInput = forwardRef<HTMLInputElement, InputProps>(
       onSubmit,
       className,
     } = props;
-
+    const id = useId();
     const [isFocused, setIsFocused] = useState(false);
 
     const placeholderText = useMemo(() => {
@@ -96,7 +96,7 @@ const InternalInput = forwardRef<HTMLInputElement, InputProps>(
         {errorMessage && (
           <>
             <div
-              data-tooltip-id="error-tooltip"
+              data-tooltip-id={`tooltip_${id}`}
               className={cn(
                 'absolute right-4 top-1/2 cursor-pointer -translate-y-1/2 mr-1 text-primary-600',
                 { 'mr-6': suffixIcon }
@@ -104,7 +104,7 @@ const InternalInput = forwardRef<HTMLInputElement, InputProps>(
             >
               <IconExclamationCircleFilled size={20} />
             </div>
-            <Tooltip id="error-tooltip" place="top" content={errorMessage} />
+            <Tooltip id={`tooltip_${id}`} place="top" content={errorMessage} />
           </>
         )}
         {suffixIcon && (
