@@ -8,16 +8,14 @@ import {
   SignFormType,
   usernameSchema,
 } from '@/entities/form';
-import { MemberType, PATH_NAME } from '@/shared/model';
+import { MemberTypeProps } from '@/entities/form/types';
+import { PATH_NAME } from '@/shared/model';
 import { Button, Form, InputField } from '@/shared/ui';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 
-interface SignFormProps {
-  memberType: MemberType;
-}
-export function SignForm({ memberType }: SignFormProps) {
+export function SignForm({ memberType }: MemberTypeProps) {
   console.log('🚀 ~ SignForm ~ memberType:', memberType);
   const schema = yup.object().shape({
     username: usernameSchema,

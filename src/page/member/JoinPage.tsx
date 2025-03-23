@@ -1,9 +1,10 @@
+import { MemberTypeProps } from '@/entities/form/types';
 import { FormLayout, SignForm } from '@/widget/form';
 
-export function JoinPage() {
+export function JoinPage({ memberType }: MemberTypeProps) {
   return (
     <FormLayout>
-      <SignForm memberType="company" />
+      <SignForm memberType={memberType} />
     </FormLayout>
   );
 }

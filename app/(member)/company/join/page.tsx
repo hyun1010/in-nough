@@ -1,5 +1,5 @@
 import { JoinPage } from '@/page/member';
 
 export default function page() {
-  return <JoinPage />;
+  return <JoinPage memberType="company" />;
 }

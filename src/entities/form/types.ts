@@ -22,3 +22,7 @@ export interface CompanySignType extends SignBaseTypes {
 export type SignFormType<T extends MemberType> = T extends 'company'
   ? CompanySignType
   : SignBaseTypes;
+
+export interface MemberTypeProps {
+  memberType: MemberType;
+}
