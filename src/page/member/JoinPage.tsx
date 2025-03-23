@@ -1,9 +1,9 @@
-import { Logo } from '@/shared/ui';
+import { FormLayout, SignForm } from '@/widget/form';
 
 export function JoinPage() {
   return (
-    <div className="flex flex-col items-center justify-center w-full h-screen bg-white p-10">
-      <Logo />
-    </div>
+    <FormLayout>
+      <SignForm memberType="company" />
+    </FormLayout>
   );
 }
