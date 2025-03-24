@@ -34,6 +34,11 @@ export function SignForm({ memberType }: MemberTypeProps) {
     defaultValues: sign_defaultValues(memberType),
   });
 
+  const {
+    formState: { errors },
+  } = methods;
+
+  console.log('🚀 ~ SignForm ~ errors:', errors);
   const handleSubmit = (form) => {
     console.log(form);
   };
