@@ -20,3 +20,9 @@ export const menu_items = [
   { name: 'Dashboard', href: PATH_NAME.WORKSPACE.MAIN, icon: IconHome },
   { name: 'Tasks', href: PATH_NAME.WORKSPACE.TASKS, icon: IconHome },
 ];
+
+export const company_list = [
+  { id: 1, name: '구글' },
+  { id: 2, name: '네이버' },
+  { id: 3, name: '카카오' },
+];

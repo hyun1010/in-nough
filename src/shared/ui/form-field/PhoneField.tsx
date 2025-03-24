@@ -14,7 +14,7 @@ export default function PhoneField({
   return (
     <Form.Field>
       <Form.Label required>핸드폰 번호</Form.Label>
-      <div className="flex items-center gap-2 relative">
+      <div className="relative flex items-center gap-2">
         <Form.Content
           name="phoneNumber.start"
           render={({ field }) => (
@@ -22,7 +22,7 @@ export default function PhoneField({
               {...field}
               type="number"
               maxLength={3}
-              className="bg-white text-body_nomal px-4 h-10 w-20 tabular-nums grow-0"
+              className="h-10 w-20 grow-0 bg-white px-4 text-body_nomal tabular-nums"
               placeholder="010"
             />
           )}
@@ -35,7 +35,7 @@ export default function PhoneField({
               {...field}
               type="number"
               maxLength={4}
-              className="bg-white text-body_nomal px-4 h-10 tabular-nums w-24 grow-0 basis-1/3"
+              className="h-10 w-24 grow-0 basis-1/3 bg-white px-4 text-body_nomal tabular-nums"
               placeholder="1234"
             />
           )}
@@ -48,7 +48,7 @@ export default function PhoneField({
               {...field}
               type="number"
               maxLength={4}
-              className="bg-white text-body_nomal px-4 h-10 tabular-nums w-24 grow-0 basis-1/3"
+              className="h-10 w-24 grow-0 basis-1/3 bg-white px-4 text-body_nomal tabular-nums"
               placeholder="5678"
             />
           )}
@@ -57,7 +57,7 @@ export default function PhoneField({
           <>
             <div
               data-tooltip-id={`tooltip_${id}`}
-              className="text-primary-600 absolute right-0 mr-2"
+              className="absolute right-0 mr-2 text-primary-600"
             >
               <IconExclamationCircleFilled size={20} />
             </div>

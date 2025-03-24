@@ -1,3 +1,4 @@
+'use client';
 import { HTMLInputTypeAttribute } from 'react';
 import Form from '../form';
 import Input from '../input';
@@ -29,7 +30,7 @@ export default function SingleField({
           <Input
             {...field}
             type={type}
-            className="w-full text-body_nomal px-4 h-10"
+            className="h-10 w-full px-4 text-body_nomal"
             placeholder={placeholder}
             readOnly={readOnly}
             errorMessage={errorMessage}
