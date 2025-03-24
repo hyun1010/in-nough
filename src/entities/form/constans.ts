@@ -2,7 +2,7 @@ import { MemberType } from '@/shared/model';
 import { CompanySignType, SignBaseTypes } from './types';
 
 const sign_baseValues = {
-  username: '',
+  name: '',
   email: '',
   phoneNumber: {
     start: '',

@@ -18,7 +18,7 @@ import * as yup from 'yup';
 export function SignForm({ memberType }: MemberTypeProps) {
   console.log('🚀 ~ SignForm ~ memberType:', memberType);
   const schema = yup.object().shape({
-    username: usernameSchema,
+    name: usernameSchema,
     email: emailSchema,
     phoneNumber: phoneNumberSchema,
     password: passwordSchema,
@@ -46,7 +46,7 @@ export function SignForm({ memberType }: MemberTypeProps) {
       <InputField.Single
         required
         label="이름"
-        name="username"
+        name="name"
         placeholder="이름을 입력하세요."
       />
       <InputField.Single required label="이메일" name="email" readOnly />

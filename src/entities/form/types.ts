@@ -1,7 +1,7 @@
 import { MemberType } from '@/shared/model';
 
 export interface SignBaseTypes {
-  username: string;
+  name: string;
   email: string;
   phoneNumber: {
     start: string;
