@@ -23,7 +23,7 @@ export function CompanyPage() {
       <DividerWithText text="또는" />
       <Link
         href={PATH_NAME.COMPANY(COMPANY_PATH.REGISTER)}
-        className="bg-purple-100 text-purple-900 text-sm px-3 py-1 rounded-full hover:underline"
+        className="rounded-full bg-purple-100 px-3 py-1 text-sm text-purple-900 hover:underline"
       >
         아직 등록된 기업이 없나요? 기업을 등록해보세요.
       </Link>
