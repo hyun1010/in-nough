@@ -2,12 +2,13 @@
 import React, { ReactNode } from 'react';
 import { useModalStore } from '@/shared/store';
 import { Modal } from '@/shared/ui';
+import RegisterModal from './RegisterModal';
 
 const _ModalTypes = ['register'] as const;
 type ModalType = (typeof _ModalTypes)[number];
 
 export const MODAL_COMPONENTS: Record<ModalType, ReactNode> = {
-  register: <div>Register</div>,
+  register: <RegisterModal />,
 };
 
 export function ModalComponents({
@@ -15,7 +16,7 @@ export function ModalComponents({
   title,
 }: {
   id: ModalType;
-  title: string;
+  title: ReactNode;
 }) {
   const { closeModal } = useModalStore();
   return (
