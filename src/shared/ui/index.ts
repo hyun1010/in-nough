@@ -6,3 +6,5 @@ export { default as Input } from './input';
 export { DefaultLogo as Logo } from './logo';
 export { default as Select } from './select';
 export { default as Tip } from './tip/Tip';
+export { default as Portal } from './portal';
+export { default as Modal } from './modal';

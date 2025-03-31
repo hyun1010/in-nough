@@ -15,7 +15,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         lang="en"
         className={`${noto_sans.variable} ${dm_sans.variable} ${archivo_black.variable} font-dm-sans`}
       >
-        <QueryProvider>{children}</QueryProvider>
+        <QueryProvider>
+          {children}
+          <div id="modal" />
+        </QueryProvider>
       </body>
     </html>
   );
