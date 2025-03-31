@@ -9,7 +9,7 @@ export default function ModalHeader({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex h-10 items-center justify-between">
+    <div className="flex h-10 items-center justify-between text-headline_1">
       {children}
       <div
         className="flex h-10 w-[3.2rem] cursor-pointer items-center justify-center"
