@@ -1,8 +1,7 @@
 'use client';
-import { MODAL_COMPONENTS } from '@/widget/modal';
+import { ModalComponents } from '@/page/modal';
 import React from 'react';
 
 export default function page() {
-  const ModalComponent = MODAL_COMPONENTS['register'];
-  return <ModalComponent />;
+  return <ModalComponents id="register" title="회사 등록" />;
 }

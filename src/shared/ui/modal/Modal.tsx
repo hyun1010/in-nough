@@ -9,7 +9,7 @@ export interface ModalProps {
   children?: React.ReactNode;
 }
 
-export default function Modal({
+export default function InternalModal({
   id,
   className,
   onClose,
