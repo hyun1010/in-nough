@@ -1,7 +1,7 @@
 import type { Preview } from '@storybook/react';
 import React from 'react';
-import { dm_sans, noto_sans } from '../src/app/fonts';
-import '../src/app/globals.css';
+import { dm_sans, noto_sans } from '../app/fonts';
+import '../app/globals.css';
 
 const preview: Preview = {
   parameters: {
